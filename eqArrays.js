@@ -25,14 +25,14 @@ const eqArrays = function (actual, expected){
       test = false;
     }
   }
-  if(test)
-  {
-    console.log(`Assertion Passed: ${actual} = ${expected}`);
-  }
-  else
-  {
-    console.log(`Assertion Failed: ${actual} != ${expected}`);
-  }
+  // if(test)
+  // {
+  //   console.log(`Assertion Passed: ${actual} = ${expected}`);
+  // }
+  // else
+  // {
+  //   console.log(`Assertion Failed: ${actual} != ${expected}`);
+  // }
 return test;
 }
 
