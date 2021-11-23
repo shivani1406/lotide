@@ -12,19 +12,18 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function (actual, expected){
-  // let arr1="";
-  // let arr2="";
-  // let test;
-  // for(let i = 0, j=0; i < actual.length, j<expected.length; i++, j++){
-  //   if(actual[i] === expected[j])
-  //   {
-  //     test = true;
-  //   }
-  //   else
-  //   {
-  //     test = false;
-  //   }
-  // }
+  
+  let test;
+  for(let i = 0, j=0; i < actual.length, j<expected.length; i++, j++){
+    if(actual[i] === expected[j])
+    {
+      test = true;
+    }
+    else
+    {
+      test = false;
+    }
+  }
   // if(test)
   // {
   //   console.log(`Assertion Passed: ${actual} = ${expected}`);
@@ -34,11 +33,11 @@ const eqArrays = function (actual, expected){
   //   console.log(`Assertion Failed: ${actual} != ${expected}`);
   // }
   // compare arrays
-  const result = JSON.stringify(actual) == JSON.stringify(expected);
+  // const result = JSON.stringify(actual) == JSON.stringify(expected);
 
   // if result is true
-// return test;
-return result;
+return test;
+// return result;
 }
 
 eqArrays([1, 2, 3], [1, 2, 3]) // => true
