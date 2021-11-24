@@ -12,7 +12,7 @@ const assertEqual = function(actual, expected) {
 
 const findKeyByValue = function(obj,val){
 let key="";
-let result="";
+let result;
 for(let keys in obj)
 {
   key=obj[keys];
