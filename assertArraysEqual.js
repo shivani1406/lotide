@@ -2,7 +2,7 @@
 const eqArrays = function (actual, expected){
   let test;
   for(let i = 0, j=0; i < actual.length, j<expected.length; i++, j++){
-    if(actual[i] === expected[j])
+    if(actual[i] == expected[j])
     {
       test = true;
     }

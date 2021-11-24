@@ -1,3 +1,27 @@
+const letterPositions = function(sentence) {
+  const results = {};
+  // logic to update results here
+  for(let key in sentence)
+  {
+    let arr=[];
+    let str="";
+    str=sentence[key];
+    if(results[str])
+    {
+     arr.push(key);
+    }
+     else
+     {
+      arr.push(key);
+     }
+     results[str] = arr;
+    // }
+    
+  }
+  console.log(results);
+  return results;
+};
+
 const eqArrays = function (actual, expected){
   let test;
   for(let i = 0, j=0; i < actual.length, j<expected.length; i++, j++){
@@ -29,19 +53,4 @@ const assertArraysEqual = function (actual, expected){
 
 }
 
-const without = function(original, remove){
-  let newarr = [];
-  for(let i = 0; i < original.length; i++)
-  {
-    if(original[i] != remove)
-    {
-      newarr.push(original[i]);
-    }
-  }
-  console.log(newarr);
-}
-
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(letterPositions("hello").e, [1]);
