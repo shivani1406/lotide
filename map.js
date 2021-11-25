@@ -1,3 +1,13 @@
+const words = ["ground", "control", "to", "major", "tom"];
+
+const map = function(array, callback) {
+  const results = [];
+  for (let item of array) {
+    results.push(callback(item));
+  }
+  return results;
+}
+
 const eqArrays = function (actual, expected){
   let test;
   if(actual.length == expected.length)
@@ -27,32 +37,18 @@ const assertArraysEqual = function (actual, expected){
   const result = eqArrays(actual,expected);
   if(result)
   {
-    console.log(`Assertion Passed: ${actual} = ${expected}`);
+    console.log(`✅ Assertion Passed: ${actual} = ${expected}`);
   }
   else
   {
-    console.log(`Assertion Failed: ${actual} != ${expected}`);
+    console.log(`🛑 Assertion Failed: ${actual} != ${expected}`);
   }
 
 }
 
-const flatten = function(arr){
-let newarr=[];
+const results1 = map(words, word => word[0]);
 
-for (let i=0; i<arr.length; i++)
-{
-  if(Array.isArray(arr[i]) !== true)
-  {
-    newarr.push(arr[i]);
-  }
-  else{
-    for( let j=0 ; j<arr[i].length; j++)
-    {
-      newarr.push(arr[i][j]);
-    }
-  }
-}
-console.log(newarr);
-}
+assertArraysEqual(results1,[ 'g', 'c', 't', 'm', 't' ]);
+// console.log(results1);
 
-flatten([1, 2, [3, 4], 5, [6]]) // => [1, 2, 3, 4, 5, 6]
+
