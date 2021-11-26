@@ -10,27 +10,30 @@ const assertEqual = function(actual, expected) {
   //console.assert((actual===expected) ,"Lighthouse Labs != Bootcamp");
 };
 
-const findKeyByValue = function(obj,val){
-let key="";
+const findKey = function(obj,callback){
+  let key="";
 let result;
 for(let keys in obj)
 {
   key=obj[keys];
   // console.log(key);
-  if(key === val)
+  if(callback(key))
   {
     result = keys;
     break;
   }
 }
+//console.log(result);
 return result;
 }
 
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
+const result1 = findKey({
+  "Blue Hill": { stars: 1 },
+  "Akaleri":   { stars: 3 },
+  "noma":      { stars: 2 },
+  "elBulli":   { stars: 3 },
+  "Ora":       { stars: 2 },
+  "Akelarre":  { stars: 3 }
+}, x => x.stars === 2) // => "noma"
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(result1,"noma");
