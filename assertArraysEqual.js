@@ -1,28 +1,28 @@
 
-const eqArrays = function (actual, expected){
-  let test;
-  if(actual.length == expected.length)
-  {
-    for(let i = 0, j=0; i < actual.length, j<expected.length; i++, j++){
-      if(actual[i] === expected[j])
-      {
-        test = true;
-      }
-      else
-      {
-        test = false;
-        break;
-      }
-    }
-  }
-  else
-  {
-    test = false;
-  }
-return test;
+// const eqArrays = function (actual, expected){
+//   let test;
+//   if(actual.length == expected.length)
+//   {
+//     for(let i = 0, j=0; i < actual.length, j<expected.length; i++, j++){
+//       if(actual[i] === expected[j])
+//       {
+//         test = true;
+//       }
+//       else
+//       {
+//         test = false;
+//         break;
+//       }
+//     }
+//   }
+//   else
+//   {
+//     test = false;
+//   }
+// return test;
 
-}
-
+// }
+const eqArrays = require('./eqArrays');
 const assertArraysEqual = function (actual, expected){
   // console.log(result);
   const result = eqArrays(actual,expected);
@@ -37,4 +37,4 @@ const assertArraysEqual = function (actual, expected){
 
 }
 
-assertArraysEqual([1, 2, "3"], [1, 2, 3]) // => true
+module.exports = assertArraysEqual;
