@@ -56,7 +56,7 @@ else{
 midarray.push(array[half-1]);
 }
 }
-return console.log(midarray);
+return midarray;
 }
 
 module.exports = middle;

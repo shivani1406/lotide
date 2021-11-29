@@ -16,14 +16,21 @@ const tail = function(arr)
 {
   let i = 0;
   const arr2 = [];
-  
+  if(arr.length > 1)
+  {
     for(var j=0; j < arr.length-1; j++)
     {
       i += 1;
       arr2[j] = arr[i];
     }
+  }
+  else
+  {
+    return arr[0];
+  }
     
-  
+    
+  //console.log(arr2);
   return arr2;
 }
 
